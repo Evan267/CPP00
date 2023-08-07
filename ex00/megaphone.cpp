@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eberger <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: eberger <eberger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 15:32:56 by eberger           #+#    #+#             */
-/*   Updated: 2023/05/06 16:50:44 by eberger          ###   ########.fr       */
+/*   Created: 2023/08/07 16:24:56 by eberger           #+#    #+#             */
+/*   Updated: 2023/08/07 16:24:58 by eberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
 
 char	*str_to_uppercase(char *str)
 {

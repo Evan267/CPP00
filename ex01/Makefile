@@ -18,10 +18,11 @@ ${NAME}:	${OBJS}
 
 all:		${NAME}
 
-clean:		${RM} ${OBJS}
+clean:		
+			${RM} ${OBJS}
 
 fclean:		clean
-		${RM} ${NAME}
+			${RM} ${NAME}
 
 re:		fclean all
 

@@ -6,7 +6,7 @@
 /*   By: eberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 18:28:39 by eberger           #+#    #+#             */
-/*   Updated: 2023/05/09 23:39:54 by eberger          ###   ########.fr       */
+/*   Updated: 2023/08/07 16:05:14 by eberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,21 @@ void	PhoneBook::getInput_(void)
 	while (commands.empty() || commands.compare("EXIT") != 0)
 	{
 		std::cout << "commandes : ";
-		std::cin >> commands;
-		if (commands.compare("ADD") == 0)
-			this->addNewContact();
-		else if (commands.compare("SEARCH") == 0)
-			this->searchContact();
-		else if (commands.compare("EXIT") != 0)
-			std::cerr <<  "commandes inconnu !" << std::endl;
+		std::getline(std::cin, commands);
+		if (std::cin.good() == 0)
+		{
+			std::cout << std::endl;
+			break;
+		}
+		else
+		{
+			if (commands.compare("ADD") == 0)
+				this->addNewContact();
+			else if (commands.compare("SEARCH") == 0)
+				this->searchContact();
+			else if (commands.compare("EXIT") != 0)
+				std::cerr <<  "commandes inconnu !" << std::endl;
+		}
 	}
 }
 
