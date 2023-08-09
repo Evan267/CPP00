@@ -10,7 +10,7 @@ CC	= c++
 
 FLAGS	= -Wall -Werror -Wextra -std=c++98
 
-.c.o:
+.cpp.o:
 		${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 ${NAME}:	${OBJS}
