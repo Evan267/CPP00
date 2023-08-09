@@ -6,7 +6,7 @@
 /*   By: eberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:53:11 by eberger           #+#    #+#             */
-/*   Updated: 2023/05/09 23:20:55 by eberger          ###   ########.fr       */
+/*   Updated: 2023/08/09 09:24:29 by eberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class	Contact
 
 	Contact();
 	~Contact();
-	int	addFirstName(std::string str);
-	int	addLastName(std::string str);
-	int	addNickName(std::string str);
-	int	addPhoneNumber(std::string str);
-	int	addDarkestSecret(std::string str);
+	int		addFirstName(std::string str, int *error);
+	int		addLastName(std::string str, int *error);
+	int		addNickName(std::string str, int *error);
+	int		addPhoneNumber(std::string str, int *error);
+	int		addDarkestSecret(std::string str, int *error);
 	void	showFirstName10(void);
 	void	showLastName10(void);
 	void	showNickName10(void);
@@ -34,14 +34,15 @@ class	Contact
 	void	showLastName(void);
 	void	showNickName(void);
 	void	showPhoneNumber(void);
+	void	showDarkestSecret(void);
 
 	private:
 
-	std::string	firstname_;
-	std::string	lastname_;
-	std::string	nickname_;
-	std::string	phoneNumber_;
-	std::string	darkestSecret_;
+	std::string	_firstname;
+	std::string	_lastname;
+	std::string	_nickname;
+	std::string	_phoneNumber;
+	std::string	_darkestSecret;
 };
 
 #endif

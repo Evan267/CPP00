@@ -6,7 +6,7 @@
 /*   By: eberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:47:16 by eberger           #+#    #+#             */
-/*   Updated: 2023/05/08 22:46:37 by eberger          ###   ########.fr       */
+/*   Updated: 2023/08/09 09:15:35 by eberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ class	PhoneBook
 
 	PhoneBook(void);
 	~PhoneBook(void);
-	void	addNewContact(void);
-	void	searchContact(void);
+	void	addNewContact(int *error);
+	void	searchContact(int *error);
 
 	private:
 
-	void		getInput_(void);
-	std::string	field_(std::string nameField);
-	void		createFields_(int idContact);
-	void		showContact_(int id);
-	void		showOneLineContact_(int idContact);
-	void		showContactList_(void);
-	int		getInputId_(void);
-	Contact 	contacts_[8];
-	int		nbAdd_;
+	void		_getInput(void);
+	std::string	_field(std::string nameField, int *error);
+	void		_createFields(int idContact, int *error);
+	void		_showContact(int id);
+	void		_showOneLineContact(int idContact);
+	void		_showContactList(void);
+	int			_getInputId(int *error);
+	Contact 	_contacts[8];
+	int			_nbAdd;
 };
 
 #endif

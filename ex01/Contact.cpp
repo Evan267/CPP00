@@ -6,7 +6,7 @@
 /*   By: eberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 18:51:31 by eberger           #+#    #+#             */
-/*   Updated: 2023/05/09 23:36:45 by eberger          ###   ########.fr       */
+/*   Updated: 2023/08/09 09:23:51 by eberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,43 +28,53 @@ int	printError(std::string field)
 	return (0);
 }
 
-int	Contact::addFirstName(std::string str)
+int	Contact::addFirstName(std::string str, int *error)
 {
-	if (str.size() == 0)
+	if (*error)
+		return (0);
+	if (str.empty())
 		return (printError("firstname"));
-	this->firstname_ = str;
+	this->_firstname = str;
 	return (1);
 }
 
-int	Contact::addLastName(std::string str)
+int	Contact::addLastName(std::string str, int *error)
 {
-	if (str.size() == 0)
+	if (*error)
+		return (0);
+	if (str.empty())
 		return (printError("lastname"));
-	this->lastname_ = str;
+	this->_lastname = str;
 	return (1);
 }
 
-int	Contact::addNickName(std::string str)
+int	Contact::addNickName(std::string str, int *error)
 {
-	if (str.size() == 0)
+	if (*error)
+		return (0);
+	if (str.empty())
 		return (printError("nickname"));
-	this->nickname_ = str;
+	this->_nickname = str;
 	return (1);
 }
 
-int	Contact::addPhoneNumber(std::string str)
+int	Contact::addPhoneNumber(std::string str, int *error)
 {
-	if (str.size() == 0)
+	if (*error)
+		return (0);
+	if (str.empty())
 		return (printError("phone number"));
-	this->phoneNumber_ = str;
+	this->_phoneNumber = str;
 	return (1);
 }
 
-int	Contact::addDarkestSecret(std::string str)
+int	Contact::addDarkestSecret(std::string str, int *error)
 {
-	if (str.size() == 0)
+	if (*error)
+		return (0);
+	if (str.empty())
 		return (printError("darkest secret"));
-	this->darkestSecret_ = str;
+	this->_darkestSecret = str;
 	return (1);
 }
 
@@ -93,40 +103,45 @@ void	printParams10char(std::string str) {
 
 void	Contact::showFirstName10(void)
 {
-	printParams10char(this->firstname_);
+	printParams10char(this->_firstname);
 }
 
 void	Contact::showLastName10(void)
 {
-	printParams10char(this->lastname_);
+	printParams10char(this->_lastname);
 }
 
 void	Contact::showNickName10(void)
 {
-	printParams10char(this->nickname_);
+	printParams10char(this->_nickname);
 }
 
 void	Contact::showPhoneNumber10(void)
 {
-	printParams10char(this->phoneNumber_);
+	printParams10char(this->_phoneNumber);
 }
 
 void	Contact::showFirstName(void)
 {
-	std::cout << this->firstname_ << std::endl;
+	std::cout << this->_firstname << std::endl;
 }
 
 void	Contact::showLastName(void)
 {
-	std::cout << this->lastname_ << std::endl;
+	std::cout << this->_lastname << std::endl;
 }
 
 void	Contact::showNickName(void)
 {
-	std::cout << this->nickname_ << std::endl;
+	std::cout << this->_nickname << std::endl;
 }
 
 void	Contact::showPhoneNumber(void)
 {
-	std::cout << this->phoneNumber_ << std::endl;
+	std::cout << this->_phoneNumber << std::endl;
+}
+
+void	Contact ::showDarkestSecret(void)
+{
+	std::cout << this->_darkestSecret << std::endl;
 }
