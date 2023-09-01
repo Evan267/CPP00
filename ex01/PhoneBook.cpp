@@ -34,8 +34,8 @@ void	PhoneBook::_getInput(void)
 	while (!error
 			&& (commands.empty() || commands.compare("EXIT") != 0))
 	{
-		std::cout << "commandes : ";
-		std::cin >> commands;
+		std::cout << "commandes: ";
+		std::getline(std::cin, commands);
 		if (std::cin.good() == 0)
 		{
 			std::cout << std::endl;
@@ -55,7 +55,7 @@ std::string	PhoneBook::_field(std::string nameField, int *error)
 	std::string	fieldValue;
 
 	std::cout << nameField << " : ";
-	std::cin >> fieldValue;
+	std::getline(std::cin, fieldValue);
 	if (!(std::cin.good()))
 	{
 		*error = 1;
@@ -122,7 +122,7 @@ int	PhoneBook::_getInputId(int *error)
 		if (id)
 			std::cerr << "Id Incorrect" << std::endl;
 		std::cout << "Renseigner l'id du contact à afficher : ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (!(std::cin.good()))
 		{
 			std::cout << std::endl;
